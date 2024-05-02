@@ -1,29 +1,5 @@
-parameters:
-  - name: BuildType
-    displayName: 'Select your build type'
-    default: debug
-    values:
-      - debug
-      - staging
-      - release
-
-  - name: OS
-    displayName: Operating System
-    type: string
-    default: windows-latest
-    values:
-      - windows-latest
-      - vs2017-win2016
-      - ubuntu-latest
-      - ubuntu-16.04
-      - macOS-latest
-      - macOS-10.14
-
-  - name: CurrentVersion
-    displayName: Enter the current version for this release
-    type: string
-    default: "1.0.1"
-
 trigger:
   - main
 
+pool:
+  vmImage: 'macOS-latest'
