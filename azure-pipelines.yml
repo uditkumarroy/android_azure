@@ -45,7 +45,7 @@ steps:
     inputs:
       gradleWrapperFile: 'android/gradlew'
       workingDirectory: 'android/'
-      options: '-PversionName=$(NEW_VERSION) -PversionCode=$(Build.BuildId)'
+      options: '-PversionName=$(NEW_VERSION) -PversionCode=4'
       tasks: 'assembleRelease'
       publishJUnitResults: false
       javaHomeOption: 'JDKVersion'
