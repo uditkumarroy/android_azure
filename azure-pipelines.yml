@@ -11,7 +11,7 @@ steps:
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'LocalDirectory'
         jdkFile: '/builds/openjdk-11.0.2_osx-x64_bin.tar.gz'
-        jdkDestinationDirectory: '/Library/Java/JavaVirtualMachines'
+        jdkDestinationDirectory: '$(Agent.BuildDirectory)/Java'
         cleanDestinationDirectory: true
 
 
