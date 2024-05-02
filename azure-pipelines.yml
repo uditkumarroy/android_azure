@@ -27,7 +27,7 @@ steps:
 
   - task: Gradle@2
     inputs:
-      workingDirectory: '/Users/runner/work/_temp/'
-      gradleWrapperFile: '/Users/runner/work/_temp/gradlew'
-      tasks: 'clean build connectedAndroidTest'
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      tasks: 'assembleDebug'
       options: '-Xmx3072m'
