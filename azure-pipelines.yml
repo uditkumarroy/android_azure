@@ -1,3 +1,7 @@
+trigger:
+  branches:
+    include:
+      - main
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -12,17 +16,11 @@ steps:
       jdkSourceOption: 'PreInstalled'
 
   - script: |
-      wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip -O android-sdk-tools.zip
-      unzip -q android-sdk-tools.zip -d $HOME/android-sdk
-      export ANDROID_HOME=$HOME/android-sdk
-      export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
-      echo 'ANDROID_HOME: ' $ANDROID_HOME
-      echo 'PATH: ' $PATH
-      ls -la $ANDROID_HOME/cmdline-tools/latest/bin
-      ls -la $ANDROID_HOME/platform-tools
-      source $HOME/.bashrc
-      yes | sdkmanager --licenses
-      sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
+      wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
+      unzip commandlinetools-linux-6609375_latest.zip -d cmdline-tools
+      mkdir --parents "$ANDROID_HOME/cmdline-tools/latest"
+      sudo mv cmdline-tools/* "$ANDROID_HOME/cmdline-tools/latest/"
+      export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
     displayName: 'Install Android SDK'
 
   - task: Gradle@2
