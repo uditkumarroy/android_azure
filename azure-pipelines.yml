@@ -7,7 +7,7 @@ pool:
 steps:
   - script: |
       echo 'Files List'
-      ls $(System.DefaultWorkingDirectory)/android
+      ls $(System.DefaultWorkingDirectory)
     displayName: 'List Files in Present Working Directory'
   - script: |
       echo "JDK File Path: $(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz"
