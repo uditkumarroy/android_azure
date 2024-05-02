@@ -7,6 +7,7 @@ pool:
 steps:
   - script: |
       ls
+      echo '$(System.DefaultWorkingDirectory)/android $ls'
     displayName: 'List Files in Present Working Directory'
   - script: |
       echo "JDK File Path: $(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz"
@@ -26,7 +27,7 @@ steps:
 
   - task: Gradle@2
     inputs:
-      workingDirectory: '$(System.DefaultWorkingDirectory)'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/'
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build connectedAndroidTest'
       options: '-Xmx3072m'
