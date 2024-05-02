@@ -1,32 +1,30 @@
-trigger:
-  - main
 
 pool:
-  vmImage: 'macOS-latest'
+  vmImage: 'ubuntu-latest'
 
-jobs:
-  - job: Build
-    displayName: 'Build job'
-    steps:
-      - script: |
-          echo "JDK File Path: $(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz"
-      - task: JavaToolInstaller@0
-        inputs:
-          versionSpec: '8'
-          jdkArchitectureOption: 'x64'
-          jdkSourceOption: 'PreInstalled'
+steps:
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: '11'
+      architecture: 'x64'
 
-      - task: Gradle@2
-        displayName: 'Building Project'
-        continueOnError: false
-        inputs:
-            workingDirectory: 'android/gradlew'
-            gradleOptions: '-Xmx3072m'
-            publishJUnitResults: false
-            tasks: 'build'
-            codeCoverageToolOption: 'None'
-            javaHomeOption: 'JDKVersion'
-            jdkVersionOption: 'default'
-            jdkArchitectureOption: 'x64'
-            checkStyleRunAnalysis: false
-            findBugsRunAnalysis: false
+  - script: |
+      wget https://dl.google.com/android/repository/commandlinetools-linux-7583922_latest.zip -O android-sdk-tools.zip
+      unzip -q android-sdk-tools.zip -d $HOME/android-sdk
+      export ANDROID_HOME=$HOME/android-sdk
+      export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
+      echo 'ANDROID_HOME: ' $ANDROID_HOME
+      echo 'PATH: ' $PATH
+      ls -la $ANDROID_HOME/cmdline-tools/latest/bin
+      ls -la $ANDROID_HOME/platform-tools
+      source $HOME/.bashrc
+      yes | sdkmanager --licenses
+      sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3"
+    displayName: 'Install Android SDK'
+
+  - task: Gradle@2
+    inputs:
+      workingDirectory: '$(System.DefaultWorkingDirectory)/path/to/your/android/app'
+      gradleWrapperFile: 'gradlew'
+      tasks: 'clean build connectedAndroidTest'
+      options: '-Xmx3072m'
