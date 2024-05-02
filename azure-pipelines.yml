@@ -28,7 +28,7 @@ steps:
 
   - task: Gradle@2
     inputs:
-      workingDirectory: '$(System.DefaultWorkingDirectory)/path/to/your/android/app'
+      workingDirectory: '$(System.DefaultWorkingDirectory)/android/app'
       gradleWrapperFile: 'gradlew'
       tasks: 'clean build connectedAndroidTest'
       options: '-Xmx3072m'
