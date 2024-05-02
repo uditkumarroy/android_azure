@@ -5,10 +5,15 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
-  - task: UseJavaVersion@1
+  - task: DownloadBuildArtifacts@0
     inputs:
-      versionSpec: '11'
-      addToPath: true
+      buildType: 'current'
+      downloadType: 'specific'
+      itemPattern: '**/gradle-use-java-version-0.1.jar'
+      downloadPath: '$(Agent.TempDirectory)'
+
+  - script: java -jar $(Agent.TempDirectory)/gradle-use-java-version-0.1.jar 11
+    displayName: 'Set Java version to 11'
 
   - script: |
       echo 'Files List'
