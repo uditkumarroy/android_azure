@@ -5,34 +5,15 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
-  - task: DownloadBuildArtifacts@0
-    inputs:
-      buildType: 'current'
-      downloadType: 'specific'
-      itemPattern: '**/gradle-use-java-version-0.1.jar'
-      downloadPath: '$(Agent.TempDirectory)'
-
-  - script: java -jar $(Agent.TempDirectory)/gradle-use-java-version-0.1.jar 11
-    displayName: 'Set Java version to 11'
-
-  - script: |
-      echo 'Files List'
-      ls $(System.DefaultWorkingDirectory)
-    displayName: 'List Files in Present Working Directory'
-
   - task: JavaToolInstaller@0
     inputs:
-      versionSpec: '11'
-      jdkArchitectureOption: 'x64'
-      jdkSourceOption: 'PreInstalled'
+        versionSpec: '11'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'LocalDirectory'
+        jdkFile: '/builds/openjdk-11.0.2_osx-x64_bin.tar.gz'
+        jdkDestinationDirectory: '$(Agent.BuildDirectory)/Java'
+        cleanDestinationDirectory: true
 
-  - script: |
-      wget https://dl.google.com/android/repository/commandlinetools-linux-6609375_latest.zip
-      unzip commandlinetools-linux-6609375_latest.zip -d cmdline-tools
-      mkdir --parents "$ANDROID_HOME/cmdline-tools/latest"
-      sudo mv cmdline-tools/* "$ANDROID_HOME/cmdline-tools/latest/"
-      export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
-    displayName: 'Install Android SDK'
 
   - task: Gradle@2
     inputs:
