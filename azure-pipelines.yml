@@ -31,6 +31,6 @@ steps:
   - task: Gradle@2
     inputs:
       workingDirectory: '$(System.DefaultWorkingDirectory)'  # Adjust the working directory if needed
-      gradleWrapperFile: '**/gradlew'  # Adjust the path to the gradlew script
+      gradleWrapperFile: 'gradlew'  # Adjust the path to the gradlew script
       tasks: 'assembleDebug'
       options: '-Xmx3072m'
