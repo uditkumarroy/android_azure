@@ -10,24 +10,20 @@ jobs:
     steps:
       - script: |
           echo "JDK File Path: $(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz"
-      - task: JavaToolInstaller@0
-        inputs:
-          versionSpec: '8'
-          jdkArchitectureOption: 'x64'
-          jdkSourceOption: 'PreInstalled'
-
       - task: Gradle@2
         displayName: 'Building Project'
         continueOnError: false
         inputs:
-            workingDirectory: ''
-            gradleWrapperFile: 'gradlew'
-            gradleOptions: '-Xmx3072m'
-            publishJUnitResults: false
-            tasks: 'assembleDebug'
-            codeCoverageToolOption: 'None'
-            javaHomeOption: 'JDKVersion'
-            jdkVersionOption: 'default'
-            jdkArchitectureOption: 'x64'
-            checkStyleRunAnalysis: false
-            findBugsRunAnalysis: false
+          versionSpec: '8'
+          jdkArchitectureOption: 'x64'
+          jdkSourceOption: 'PreInstalled'
+          workingDirectory: ''
+          gradleWrapperFile: 'gradlew'
+          gradleOptions: '-Xmx3072m'
+          publishJUnitResults: false
+          tasks: 'assembleDebug'
+          codeCoverageToolOption: 'None'
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: 'default'
+          checkStyleRunAnalysis: false
+          findBugsRunAnalysis: false
