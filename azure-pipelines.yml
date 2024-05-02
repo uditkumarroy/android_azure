@@ -12,9 +12,6 @@ jobs:
           echo "JDK File Path: $(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz"
       - task: JavaToolInstaller@0
         inputs:
-          versionSpec: '11'
+          versionSpec: '8'
           jdkArchitectureOption: 'x64'
-          jdkSourceOption: 'LocalDirectory'
-          jdkFile: '$(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz'
-          jdkDestinationDirectory: '/Library/Java/JavaVirtualMachines'
-          cleanDestinationDirectory: true
+          jdkSourceOption: 'PreInstalled'
