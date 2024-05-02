@@ -27,7 +27,7 @@ steps:
 
   - task: Gradle@2
     inputs:
-      workingDirectory: ''
-      gradleWrapperFile: 'gradlew'
+      workingDirectory: '$(System.DefaultWorkingDirectory)'
+      gradleWrapperFile: '$(System.DefaultWorkingDirectory)/gradlew'
       tasks: 'assembleDebug'
       options: '-Xmx3072m'
