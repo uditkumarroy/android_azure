@@ -5,18 +5,19 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
+  - task: UseJavaVersion@1
+    inputs:
+      versionSpec: '11'
+      addToPath: true
+
   - script: |
       echo 'Files List'
       ls $(System.DefaultWorkingDirectory)
     displayName: 'List Files in Present Working Directory'
 
-  - script: |
-      echo "JDK File Path: $(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz"
-    displayName: 'Display JDK File Path'
-
   - task: JavaToolInstaller@0
     inputs:
-      versionSpec: '8'
+      versionSpec: '11'
       jdkArchitectureOption: 'x64'
       jdkSourceOption: 'PreInstalled'
 
@@ -28,18 +29,9 @@ steps:
       export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
     displayName: 'Install Android SDK'
 
-  - script: |
-      echo "distributionUrl=https\://services.gradle.org/distributions/gradle-8.2-bin.zip" > gradle/wrapper/gradle-wrapper.properties
-    displayName: 'Update Gradle Wrapper Properties'
-
-  - script: |
-      chmod +x ./gradlew
-      ./gradlew assembleDebug
-    displayName: 'Run Gradle Build'
-
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publishing Artifacts'
-    continueOnError: false
+  - task: Gradle@2
     inputs:
-      pathtoPublish: '$(System.DefaultWorkingDirectory)/app/build/outputs/apk/debug/'
-      artifactName: 'debug-apk'
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      tasks: 'assembleDebug'
+      options: '-Xmx3072m'
