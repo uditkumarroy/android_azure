@@ -4,20 +4,30 @@ trigger:
 pool:
   vmImage: 'macOS-latest'
 
-steps:
-  - task: JavaToolInstaller@0
-    inputs:
-        versionSpec: '11'
-        jdkArchitectureOption: 'x64'
-        jdkSourceOption: 'LocalDirectory'
-        jdkFile: '/builds/openjdk-11.0.2_osx-x64_bin.tar.gz'
-        jdkDestinationDirectory: '$(Agent.BuildDirectory)/Java'
-        cleanDestinationDirectory: true
+jobs:
+  - job: Build
+    displayName: 'Build job'
+    steps:
+      - script: |
+          echo "JDK File Path: $(Agent.BuildDirectory)/openjdk-11.0.2_osx-x64_bin.tar.gz"
+      - task: JavaToolInstaller@0
+        inputs:
+          versionSpec: '8'
+          jdkArchitectureOption: 'x64'
+          jdkSourceOption: 'PreInstalled'
 
-
-  - task: Gradle@2
-    inputs:
-      workingDirectory: ''
-      gradleWrapperFile: 'gradlew'
-      tasks: 'assembleDebug'
-      options: '-Xmx3072m'
+      - task: Gradle@2
+        displayName: 'Building Project'
+        continueOnError: false
+        inputs:
+            workingDirectory: ''
+            gradleWrapperFile: 'gradlew'
+            gradleOptions: '-Xmx3072m'
+            publishJUnitResults: false
+            tasks: assembleDebug
+            codeCoverageToolOption: 'None'
+            javaHomeOption: 'JDKVersion'
+            jdkVersionOption: 'default'
+            jdkArchitectureOption: 'x64'
+            checkStyleRunAnalysis: false
+            findBugsRunAnalysis: false
