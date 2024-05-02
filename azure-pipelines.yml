@@ -21,7 +21,6 @@ jobs:
         continueOnError: false
         inputs:
             workingDirectory: 'android/gradlew'
-            gradleWrapperFile: 'gradlew'
             gradleOptions: '-Xmx3072m'
             publishJUnitResults: false
             tasks: 'build'
