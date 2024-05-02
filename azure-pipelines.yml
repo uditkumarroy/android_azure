@@ -4,17 +4,26 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 
 trigger:
-- main
+  - master
 
 pool:
-  vmImage: 'macos-latest'
+  vmImage: 'macOS-latest'
 
 steps:
-- task: Gradle@2
-  inputs:
-    workingDirectory: ''
-    gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    publishJUnitResults: false
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'assembleDebug'
+  - task: UseJavaVersion@1
+    inputs:
+      versionSpec: '11'
+      arch: 'x64'
+      addToPath: true
+
+  - script: |
+      echo 'y' | sdkmanager --licenses
+    displayName: 'Accept Android SDK Licenses'
+
+  - task: Gradle@2
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      tasks: 'assembleDebug'
+      options: '-Xmx3072m'
+
