@@ -1,5 +1,18 @@
 trigger:
-  - master
+  - main
 
 pool:
   vmImage: 'macOS-latest'
+
+steps:
+  - task: JavaToolInstaller@0
+    inputs:
+        versionSpec: '11'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'LocalDirectory'
+        jdkFile: '/builds/openjdk-11.0.2_osx-x64_bin.tar.gz'
+        jdkDestinationDirectory: '/Library/Java/JavaVirtualMachines'
+        cleanDestinationDirectory: true
+
+
+
