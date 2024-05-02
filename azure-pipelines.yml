@@ -24,7 +24,7 @@ jobs:
             gradleWrapperFile: 'gradlew'
             gradleOptions: '-Xmx3072m'
             publishJUnitResults: false
-            tasks: assembleDebug
+            tasks: 'assembleDebug'
             codeCoverageToolOption: 'None'
             javaHomeOption: 'JDKVersion'
             jdkVersionOption: 'default'
