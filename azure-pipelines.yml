@@ -1,47 +1,25 @@
-# Android
-# Build your Android project with Gradle.
-# Add steps that test, sign, and distribute the APK, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/android
+parameters:
+  - name: BuildType
+    displayName: 'Select your build type'
+    default: debug
+    values:
+      - debug
+      - staging
+      - release
 
-trigger:
-  - master
+  - name: OS
+    displayName: Operating System
+    type: string
+    default: windows-latest
+    values:
+      - windows-latest
+      - vs2017-win2016
+      - ubuntu-latest
+      - ubuntu-16.04
+      - macOS-latest
+      - macOS-10.14
 
-pool:
-  vmImage: 'macOS-latest'
-
-steps:
-  - task: UseJavaVersion@1
-    inputs:
-      versionSpec: '16.10.0' # you can use your desired version here
-  - script: yarn install
-    displayName: Install Dependencies
-  - script: |
-
-    displayName: 'Bump version and set variables'
-  - task: Gradle@2
-    displayName: 'Build APK'
-    inputs:
-      gradleWrapperFile: 'android/gradlew'
-      workingDirectory: 'android/'
-      options: '-PversionName=$(NEW_VERSION) -PversionCode=4'
-      tasks: 'assembleRelease'
-      publishJUnitResults: false
-      javaHomeOption: 'JDKVersion'
-      jdkVersionOption: '1.11'
-      gradleOptions: '-Xmx3072m'
-      sonarQubeRunAnalysis: false
-  - task: AndroidSigning@3
-    displayName: 'Sign APK'
-    inputs:
-      apkFiles: 'android/app/build/outputs/apk/release/*.apk'
-      apksignerKeystoreFile: 'keystore.keystore'
-      apksignerKeystorePassword: '$(AndroidKeyStorePassword)'
-      apksignerKeystoreAlias: '$(AndroidKeyAlias)'
-      apksignerKeyPassword: '$(AndroidKeyAliasPassword)'
-      zipalign: true
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish APK to artifacts'
-    inputs:
-      PathtoPublish: 'android/app/build/outputs/apk/release'
-      ArtifactName: 'android'
-      publishLocation: 'Container'
+  - name: CurrentVersion
+    displayName: Enter the current version for this release
+    type: string
+    default: "1.0.1"
