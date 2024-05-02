@@ -3,7 +3,8 @@ trigger:
 
 pool:
   vmImage: 'macOS-latest'
-
+steps:
+  - script: ./gradlew check
 jobs:
   - job: Build
     displayName: 'Build job'
