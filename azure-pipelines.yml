@@ -18,11 +18,17 @@ jobs:
           jdkSourceOption: 'PreInstalled'
 
       - task: Gradle@2
+        displayName: 'Building Project'
+        continueOnError: false
         inputs:
-          workingDirectory: ''
-          gradleWrapperFile: 'gradlew'
-          gradleOptions: '-Xmx3072m'
-          publishJUnitResults: false
-          testResultsFiles: '**/TEST-*.xml'
-          tasks: 'assembleDebug'
-
+            workingDirectory: ''
+            gradleWrapperFile: 'gradlew'
+            gradleOptions: '-Xmx3072m'
+            publishJUnitResults: false
+            tasks: 'assembleDebug'
+            codeCoverageToolOption: 'None'
+            javaHomeOption: 'JDKVersion'
+            jdkVersionOption: 'default'
+            jdkArchitectureOption: 'x64'
+            checkStyleRunAnalysis: false
+            findBugsRunAnalysis: false
