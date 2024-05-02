@@ -4,19 +4,13 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 
 trigger:
-  branches:
-    include:
-      - master
-variables:
-  - group: Mobile # change it to the name you have set
+  - master
+
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macOS-latest'
+
 steps:
-  - checkout: self
-    persistCredentials: true
-    clean: true
-  - task: NodeTool@0
-    displayName: 'Install Node'
+  - task: UseJavaVersion@1
     inputs:
       versionSpec: '16.10.0' # you can use your desired version here
   - script: yarn install
