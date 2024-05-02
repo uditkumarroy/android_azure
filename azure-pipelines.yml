@@ -10,11 +10,12 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
-  - task: UseJavaVersion@1
+  - task: JavaToolInstaller@0
     inputs:
       versionSpec: '11'
-      arch: 'x64'
-      addToPath: true
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'localPath'
+      jdkFile: '/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home'
 
   - script: |
       echo 'y' | sdkmanager --licenses
@@ -26,4 +27,6 @@ steps:
       gradleWrapperFile: 'gradlew'
       tasks: 'assembleDebug'
       options: '-Xmx3072m'
+
+
 
