@@ -28,9 +28,20 @@ steps:
       export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
     displayName: 'Install Android SDK'
 
+  - script: |
+      echo 'Checking Gradle Wrapper'
+      ls -l gradlew
+      chmod +x gradlew  # Ensure the Gradle Wrapper script is executable
+    displayName: 'Check and Set Gradlew Permissions'
+
+  - script: |
+      echo 'Run Gradle Build Locally'
+      ./gradlew assembleDebug  # Try running the Gradle build command locally
+    displayName: 'Run Gradle Build Locally'
+
   - task: Gradle@2
     inputs:
-      workingDirectory: '$(System.DefaultWorkingDirectory)'  # Adjust the working directory if needed
-      gradleWrapperFile: 'gradlew'  # Adjust the path to the gradlew script
+      workingDirectory: '$(System.DefaultWorkingDirectory)'  # Adjust the working directory
+      gradleWrapperFile: 'gradlew'
       tasks: 'assembleDebug'
       options: '-Xmx3072m'
