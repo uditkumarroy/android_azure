@@ -14,8 +14,8 @@ steps:
     inputs:
       versionSpec: '11'
       jdkArchitectureOption: 'x64'
-      jdkSourceOption: 'localPath'
-      jdkFile: '/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home'
+      jdkSourceOption: 'path'
+      jdkPath: '/Library/Java/JavaVirtualMachines/jdk-11.0.13.jdk/Contents/Home'
 
   - script: |
       echo 'y' | sdkmanager --licenses
