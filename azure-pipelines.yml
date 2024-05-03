@@ -37,11 +37,5 @@ jobs:
 
       - script: |
           firebase login:ci --no-localhost --token "1//0gb8tXttQVMPnCgYIARAAGBASNwF-L9Ir77z3rFy7t1oS1IW9Pd77KqmNMRcZlHuKjqonxlTvuiLciHdIf2q0h5tdTsEbYPgt2QM"
-          env:
-          FIREBASE_TOKEN: "1//0gb8tXttQVMPnCgYIARAAGBASNwF-L9Ir77z3rFy7t1oS1IW9Pd77KqmNMRcZlHuKjqonxlTvuiLciHdIf2q0h5tdTsEbYPgt2QM"
-          displayName: 'Authenticate Firebase'
-    
-      - script: |
           firebase appdistribution:distribute path/to/your/apk/file.apk --app your-firebase-app-id --groups your-distribution-group
-          displayName: 'Upload APK to Firebase App Distribution'
-
+        displayName: 'Authenticate Firebase and Upload APK to Firebase App Distribution'
