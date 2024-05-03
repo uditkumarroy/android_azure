@@ -36,6 +36,6 @@ jobs:
         displayName: 'Install Firebase CLI'
 
       - script: |
-          firebase login:ci --no-localhost --token "1//0gb8tXttQVMPnCgYIARAAGBASNwF-L9Ir77z3rFy7t1oS1IW9Pd77KqmNMRcZlHuKjqonxlTvuiLciHdIf2q0h5tdTsEbYPgt2QM"
+          firebase login:ci --no-localhost --token "0gb8tXttQVMPnCgYIARAAGBASNwF-L9Ir77z3rFy7t1oS1IW9Pd77KqmNMRcZlHuKjqonxlTvuiLciHdIf2q0h5tdTsEbYPgt2QM"
           firebase appdistribution:distribute $(Build.SourcesDirectory)/app/build/outputs/apk/debug/app-debug.apk --app 1:429865720909:android:4be9d3c45462ad91d95004 --groups test
         displayName: 'Authenticate Firebase and Upload APK to Firebase App Distribution'
