@@ -30,3 +30,12 @@ jobs:
             jdkArchitectureOption: 'x64'
             checkStyleRunAnalysis: false
             findBugsRunAnalysis: false
+
+  - script: |
+      echo "Build location: $(Build.SourcesDirectory)"
+      displayName: 'Show Build Location'
+  - script: |
+      ./gradlew appDistributionUploadRelease
+      displayName: 'Upload APK to Firebase App Distribution'
+      env:
+      FIREBASE_TOKEN: $(FIREBASE_TOKEN)

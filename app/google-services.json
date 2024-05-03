@@ -1,0 +1,343 @@
+{
+  "project_info": {
+    "project_number": "429865720909",
+    "firebase_url": "https://test-c9b42.firebaseio.com",
+    "project_id": "test-c9b42",
+    "storage_bucket": "test-c9b42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:6b2ff5d0e5d90d3ed95004",
+        "android_client_info": {
+          "package_name": "com.android.databindingsample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:e2df6f387b9376a4d95004",
+        "android_client_info": {
+          "package_name": "com.android.firebasesample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:94e76aecbd72fde5d95004",
+        "android_client_info": {
+          "package_name": "com.android.icelibtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:da11a6e6eb86c8f3d95004",
+        "android_client_info": {
+          "package_name": "com.android.testingstudy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:4be9d3c45462ad91d95004",
+        "android_client_info": {
+          "package_name": "com.azurebuildsample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:0b7d889237a29825d95004",
+        "android_client_info": {
+          "package_name": "com.dropnet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:844acac33c4c35ded95004",
+        "android_client_info": {
+          "package_name": "com.example.depplinkandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:ddaff8ec479d8298d95004",
+        "android_client_info": {
+          "package_name": "com.example.gradeltest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-c9a5cd244hp472nc6inapna0st0rknq8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gradeltest",
+            "certificate_hash": "313dfcaa61b172e03560fbcd74d48ca03392134a"
+          }
+        },
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429865720909:android:96e1f43d5d0d2d8bd95004",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429865720909-v4n0aume5tkevg74v8ev9df0ptkjh48m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLu9nB9VHzWSmSK48pIErM4t3uI7vDRyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429865720909-74d06du6dqksbm4qa9lej5cm30hki6kf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "429865720909-pth2cqrskun3m1037ivcd3q3pvbkce42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "co.appbrewery.Flash-Chat-iOS13"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
